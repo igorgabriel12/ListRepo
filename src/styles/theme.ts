@@ -1,0 +1,28 @@
+export default {
+  COLORS: {
+    ERROR: '#FB0E0E',
+    SEPARATOR: '#EBEBEB',
+    EMPTY_SCREEN: '#D9D9D9',
+    PRIMARY_TEXT: '#000000',
+    SECONDARY_TEXT: '#48484A',
+    DEFAULT_BACKGROUND: '#FFFFFF',
+    SEARCH_BACKGROUND: '#7676801F',
+    SEARCH_PLACEHOLDER: '#3C3C4399',
+  },
+
+  FONTS: {
+    PRIMARY: 'SF Pro Text',
+  },
+
+  SIZES: {
+    XXX_SMALL: 8,
+    XX_SMALL: 10,
+    X_SMALL: 12,
+    SMALL: 14,
+    MEDIUM: 16,
+    LARGE: 18,
+    X_LARGE: 20,
+    XX_LARGE: 24,
+    XXX_LARGE: 30,
+  },
+};
