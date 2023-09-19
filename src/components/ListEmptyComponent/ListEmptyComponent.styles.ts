@@ -24,18 +24,18 @@ export const ContentContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 18px;
   font-weight: 700;
   line-height: 28px;
   text-align: center;
   font-family: SF Pro Text;
+  font-size: ${({theme}) => theme.SIZES.LARGE}px;
   color: ${({theme}) => theme.COLORS.PRIMARY_TEXT};
 `;
 
 export const Description = styled.Text`
-  font-size: 16px;
   line-height: 24px;
   text-align: center;
   font-family: SF Pro Text;
+  font-size: ${({theme}) => theme.SIZES.MEDIUM}px;
   color: ${({theme}) => theme.COLORS.SECONDARY_TEXT};
 `;

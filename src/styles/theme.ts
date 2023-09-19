@@ -23,6 +23,6 @@ export default {
     LARGE: 18,
     X_LARGE: 20,
     XX_LARGE: 24,
-    XXX_LARGE: 30,
+    XXX_LARGE: 34,
   },
 };

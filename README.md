@@ -21,7 +21,7 @@ Before you get started, make sure you have the following tools installed on your
 1. Clone this repository to your system:
 
    ```
-   git clone https://github.com/your-username/ListRepo.git
+   git clone https://github.com/igorgabriel12/ListRepo.git
    ```
 
 2. Navigate to the project directory:
@@ -35,6 +35,20 @@ Before you get started, make sure you have the following tools installed on your
    ```
    yarn
    ```
+
+## How to Run on Android
+
+To run the app on Android, you'll need to set up the Android emulator or connect an Android device to your computer.
+
+1. Start the Android emulator or connect your Android device to your computer.
+
+2. Open a terminal in the project's root directory and run the following command:
+
+   ```
+   yarn android
+   ```
+
+This will build the app and start it on the Android emulator or device.
 
 ## How to Run on iOS
 

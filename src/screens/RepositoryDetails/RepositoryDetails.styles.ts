@@ -9,12 +9,13 @@ export const Container = styled.View`
 export const HeaderLabel = styled.Text`
   flex: 1;
   left: -10px;
-  font-size: 16px;
   font-weight: 600;
   text-align: left;
   line-height: 24px;
   letter-spacing: -0.37px;
   font-family: SF Pro Text;
+  font-size: ${({theme}) => theme.SIZES.MEDIUM}px;
+  color: ${({theme}) => theme.COLORS.PRIMARY_TEXT};
 `;
 
 export const GitHubLoader = styled(LottieView).attrs({

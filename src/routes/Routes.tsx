@@ -15,15 +15,21 @@ export type RepositoriesStack = {
 const Stack = createNativeStackNavigator<RepositoriesStack>();
 
 export default () => (
-  <Stack.Navigator initialRouteName={SCREENS.REPOSITORIES_LIST}>
+  <Stack.Navigator
+    screenOptions={() => ({
+      statusBarStyle: 'dark',
+      headerShadowVisible: false,
+      statusBarColor: theme.COLORS.DEFAULT_BACKGROUND,
+    })}
+    initialRouteName={SCREENS.REPOSITORIES_LIST}>
     <Stack.Screen
       component={RepositoriesList}
       name={SCREENS.REPOSITORIES_LIST}
       options={() => ({
         headerLargeTitle: true,
         headerTransparent: false,
-        headerShadowVisible: false,
         headerTitle: 'Repositórios',
+        headerTitleStyle: styles.headerLargeTitleStyle,
         headerLargeTitleStyle: styles.headerLargeTitleStyle,
       })}
     />
@@ -31,7 +37,6 @@ export default () => (
       component={RepositoryDetails}
       name={SCREENS.REPOSITORY_DETAILS}
       options={() => ({
-        headerShadowVisible: false,
         headerBackTitleVisible: false,
       })}
     />
@@ -40,9 +45,9 @@ export default () => (
 
 const styles = StyleSheet.create({
   headerLargeTitleStyle: {
-    fontSize: 34,
     fontWeight: '700',
     fontFamily: 'SF Pro Display',
+    fontSize: theme.SIZES.XXX_LARGE,
     color: theme.COLORS.PRIMARY_TEXT,
   },
 });

@@ -1,4 +1,5 @@
 import React, {useCallback, useLayoutEffect, useState} from 'react';
+import {Keyboard} from 'react-native';
 
 import {RootState} from '../../store';
 import {useDispatch, useSelector} from 'react-redux';
@@ -8,6 +9,7 @@ import {
   getRepositoriesFetch,
 } from '../../store/reducers/repositories';
 
+import theme from '../../styles/theme';
 import {SCREENS} from '../../routes/screens';
 import {RepositoriesStack} from '../../routes/Routes';
 import {Container, List} from './RepositoriesList.styles';
@@ -86,13 +88,28 @@ const RepositoriesList: React.FC = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerSearchBarOptions: {
+        autoCapitalize: 'none',
+        cancelButtonText: 'Cancelar',
+        shouldShowHintSearchIcon: true,
+        textColor: theme.COLORS.PRIMARY_TEXT,
         placeholder: 'Busca por repositórios',
+        barTintColor: theme.COLORS.SEARCH_BACKGROUND,
+        headerIconColor: theme.COLORS.SECONDARY_TEXT,
+        hintTextColor: theme.COLORS.SEARCH_PLACEHOLDER,
         onBlur: () => {
           getRepositoriesByFilter();
+        },
+        onClose: () => {
+          clearFilter();
+          dispatch(clearRepositories());
         },
         onCancelButtonPress: () => {
           clearFilter();
           dispatch(clearRepositories());
+        },
+        onSearchButtonPress: () => {
+          Keyboard.dismiss();
+          getRepositoriesByFilter();
         },
         onChangeText: (event: {
           nativeEvent: {text: React.SetStateAction<string>};
